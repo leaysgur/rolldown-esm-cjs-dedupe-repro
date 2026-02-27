@@ -122,7 +122,7 @@ Module deduplication in `crates/rolldown/src/module_loader/module_loader.rs` (L2
 
 ## Workaround
 
-Force deduplication via `resolve.alias`:
+Force deduplication via `resolve.alias`, pointing to the `.mjs` (ESM) variant:
 
 ```js
 import { createRequire } from "node:module";
@@ -132,13 +132,15 @@ const require = createRequire(import.meta.url);
 {
   resolve: {
     alias: {
-      "prettier/plugins/babel": require.resolve("prettier/plugins/babel"),
+      // Point to .mjs so both ESM and CJS consumers share the ESM variant.
+      // Using .js (CJS) also fixes runtime errors, but both variants still get bundled.
+      "prettier/plugins/babel": require.resolve("prettier/plugins/babel").replace(".js", ".mjs"),
     }
   }
 }
 ```
 
-Pinning to an absolute path forces rolldown to recognize it as one module node.
+Note: `require.resolve()` returns the CJS entry (`.js`) due to Node's resolution rules, so `.replace(".js", ".mjs")` is needed to target the ESM variant and avoid duplication.
 
 ## Environment
 
