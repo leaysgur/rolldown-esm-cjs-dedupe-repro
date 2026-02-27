@@ -1,0 +1,13 @@
+{
+  "name": "rolldown-repro",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "prettier": "^3.8.1",
+    "prettier-plugin-svelte": "^3.5.0",
+    "rolldown": "^1.0.0-rc.6"
+  }
+}

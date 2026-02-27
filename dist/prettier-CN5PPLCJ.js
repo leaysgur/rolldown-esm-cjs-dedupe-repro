@@ -1,0 +1,4 @@
+import { a as formatWithCursor2, c as index_exports, d as resolveConfig, f as resolveConfigFile, h as doc_exports, i as format2, l as init_prettier, m as version_evaluate_default, n as clearCache3, o as getSupportInfo2, p as sharedWithCli, r as debugApis, s as get_file_info_default, t as check, u as public_exports } from "./prettier-CGhNvo7x.js";
+
+init_prettier();
+export { debugApis as __debug, sharedWithCli as __internal, check, clearCache3 as clearConfigCache, index_exports as default, doc_exports as doc, format2 as format, formatWithCursor2 as formatWithCursor, get_file_info_default as getFileInfo, getSupportInfo2 as getSupportInfo, resolveConfig, resolveConfigFile, public_exports as util, version_evaluate_default as version };

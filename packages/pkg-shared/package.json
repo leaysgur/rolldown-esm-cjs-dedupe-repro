@@ -1,0 +1,10 @@
+{
+  "name": "pkg-shared",
+  "version": "1.0.0",
+  "exports": {
+    "./utils": {
+      "require": "./utils.cjs",
+      "default": "./utils.mjs"
+    }
+  }
+}
